@@ -1,0 +1,13 @@
+---
+import Base from "./Base.astro";
+const { frontmatter } = Astro.props;
+const theTags = frontmatter.tags;
+---
+
+<Base pageTitle={frontmatter.title} <h1>{frontmatter.title}</Base>
+<p>Written by {frontmatter.author}</p>
+<h5>{frontmatter.description}</h5>
+<ul class="tested">
+  {frontmatter.tags.map((tag: any) => <li>{tag}</li>)}
+</ul>
+<slot />

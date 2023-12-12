@@ -1,0 +1,16 @@
+---
+import GraphQL from "../scripts/graphql";
+
+const data = await GraphQL.query(`
+{
+  allSettings {
+    generalSettingsTitle
+    generalSettingsDescription
+  }
+}
+`);
+---
+
+<h2>Not Found</h2>
+<h2>{data.allSettings.generalSettingsTitle}</h2>
+<h2>{data.allSettings.generalSettingsDescription}</h2>
